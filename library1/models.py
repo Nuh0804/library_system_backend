@@ -51,6 +51,3 @@ class Returned(models.Model):
         if self.order.date_to_return<self.date_returned:
             return self.punctuality == True
         
-
-        
-    #if returned, update the order model(is_returned) and book(is_taken) model and collection(count) by using signal

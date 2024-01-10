@@ -57,8 +57,13 @@ class ReturnedBookSerializer(serializers.ModelSerializer):
         if not order:
             raise serializers.ValidationError('incorrect order')
 
+        #when the user returns the book increase the count in the collection
+        #render the book as not taken
         user_order.is_returned = True
         book = user_order.book
+        collection = user_order.collection
+        collection.count +=1
+        collection.save()
         book.is_taken = False
         book.save()
         user_order.save()
