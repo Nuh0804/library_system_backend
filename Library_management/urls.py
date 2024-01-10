@@ -21,7 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('myusers.urls')),
     path('auth/', include('djoser.urls')),
-    # path('auth/', include('djoser.urls.jwt')),
-    path('authentication/', include("rest_framework.urls")),
-    path('library', include('library1.urls')),
+    path('auth/', include('djoser.urls.jwt')),
+    path('library/', include('library1.urls')),
 ]

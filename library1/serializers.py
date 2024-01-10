@@ -47,7 +47,7 @@ class ReturnedBookSerializer(serializers.ModelSerializer):
     user = serializers.CharField(default=CurrentUserDefault())
     class Meta:
         model = Returned
-        fields = ['user', 'order', 'date_returned', 'punctuality']
+        fields = ['user', 'order', 'date_returned']
 
     def create(self, validated_data):
         user_order = validated_data['order']
